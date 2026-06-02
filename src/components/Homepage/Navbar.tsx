@@ -5,7 +5,7 @@ import { useAuth } from "@/hooks/useAuth";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { Zap, ArrowRight, Sun, Moon } from "lucide-react";
+import { Zap, ArrowRight, Sun, Moon, MoreVertical } from "lucide-react";
 
 export default function Navbar() {
   const { user, loading, logout } = useAuth();
@@ -80,7 +80,9 @@ shadow-[0_8px_32px_rgba(0,0,0,0.2)]"
             alt="CareerPilot"
             className="h-8 w-8 rounded-lg object-cover"
           />
-          <span className="font-bold text-base tracking-tight text-foreground">CareerPilot</span>
+          <span className="font-bold text-base tracking-tight text-foreground">
+            CareerPilot
+          </span>
         </Link>
 
         {/* Navigation: Hidden on Mobile */}
@@ -121,7 +123,7 @@ shadow-[0_8px_32px_rgba(0,0,0,0.2)]"
               <div className="relative">
                 <button
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                  className="flex items-center gap-3 p-1 rounded-full hover:bg-foreground/5 transition-all outline-none"
+                  className="flex items-center gap-1 md:gap-2 p-1 pr-2 rounded-full hover:bg-foreground/5 transition-all outline-none"
                 >
                   <img
                     src={
@@ -131,6 +133,13 @@ shadow-[0_8px_32px_rgba(0,0,0,0.2)]"
                     alt="Profile"
                     className="w-8 h-8 md:w-9 md:h-9 rounded-full border border-foreground/10 group-hover:border-primary/50 transition-colors object-cover"
                   />
+
+                  <div className="md:hidden flex items-center gap-1">
+                    <MoreVertical size={16} className="text-foreground/60" />
+                    <span className="text-xs font-medium text-foreground/60">
+                      Menu
+                    </span>
+                  </div>
                 </button>
 
                 <AnimatePresence>
@@ -176,6 +185,12 @@ shadow-[0_8px_32px_rgba(0,0,0,0.2)]"
                           href="/dashboard/profile"
                           label="Profile Settings"
                           icon="person"
+                          onClick={() => setIsDropdownOpen(false)}
+                        />
+                        <DropdownItem
+                          href="/about"
+                          label="About"
+                          icon="info"
                           onClick={() => setIsDropdownOpen(false)}
                         />
 

@@ -21,7 +21,7 @@ const VALUES = [
 const TEAM = [
   { name: "Alvy Ahmed", role: "MERN Stack Developer", photo: "/alvy.jpg" },
   { name: "Ahnaf Abid", role: "MERN Stack Developer", photo: "/Ahnaf Abid.jpg" },
-  { name: "Md. Asaduzzaman Masad", role: "Frontend Developer", photo: null },
+  { name: "Md. Asaduzzaman Masad", role: "MERN Stack Developer", photo: "/Masad.jpg" },
   { name: "A.T.M Abdullah Al Mamun", role: "MERN Stack Developer", photo: "/Abdullah.jpg" },
   { name: "Abdur Razzaqe Mia", role: "MERN Stack Developer", photo: "/razzaq.jpg" },
 ];
@@ -214,14 +214,14 @@ export default function AboutPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
                 <a
-                  href="mailto:careerpilot@example.com"
+                  href="mailto:tasnifmasad40@gmail.com"
                   className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-primary hover:bg-primary/90 text-white font-bold rounded-xl transition-all active:scale-95 shadow-lg shadow-primary/20"
                 >
                   <span className="material-symbols-outlined text-[18px]">mail</span>
                   Get in touch
                 </a>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/masad40"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-body-bg border border-card-border hover:border-primary/40 text-foreground font-bold rounded-xl transition-all active:scale-95"
