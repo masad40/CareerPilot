@@ -44,7 +44,24 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
       console.error("Logout Error:", error);
     }
   };
+const { user, loading } = useAuth();
 
+
+useEffect(() => {
+  if (!loading && !user) {
+    router.replace("/login");
+  }
+}, [user, loading, router]);
+
+if (loading || !user) {
+  return (
+    <div className="h-screen flex items-center justify-center bg-[#0A0C1B]">
+      <div className="animate-spin text-primary">
+        <Sun size={32} />
+      </div>
+    </div>
+  );
+}
   const navItems = [
     { name: "Overview", href: "/dashboard", icon: "dashboard" },
     { name: "Roadmaps", href: "/dashboard/roadmap", icon: "map" },
